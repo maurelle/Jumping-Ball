@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Project Description
 
-You can use the [editor on GitHub](https://github.com/maurelle/project/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+      โครงงานนี้เราทำเกี่ยวกับ Microcontroller โดยจัดทำเป็นเกมส์ที่ใช้ไมโครคอนโทรลเลอร์ (Micro-controller) ในการทำ และใช้ตัว LED Dot Matrix เป็นตัวแสดงผลออกมาพัฒนามาจากเกมส์ Cookie Run และนำมาผสมผสานความคิดสร้างสรรค์ของผู้จัดทำ โดยตัวเกมส์จะแสดงผลออกมาเป็นไฟ LED ของ LED Dot Matrix มีปุ่มคอนโทรลให้เดินหน้า ถอยหลัง กระโดด จะมีสิ่งกีดขวางที่ผู้เล่นจะต้องหลบหลีก ระหว่างทาง เพื่อให้ผู้เล่นจะได้ไม่เบื่อในการเล่นเกมส์ และเพื่อความสนุกสนานของผู้เล่นอีกด้วย
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
