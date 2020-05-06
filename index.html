@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+  <title>JUMPING BALL</title>
+  <!--stylesheet-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="styles/styles.css" rel="stylesheet" type="text/css">
+  <link href="styles/custom-responsive-styles.css" rel="stylesheet" type="text/css">
+  <!--scripts-->
+  <script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="scripts/all-plugins.js"></script>
+  <script type="text/javascript" src="scripts/plugins-activate.js"></script>
+
+  <style>
+    img:hover {
+      animation: shake 0.5s;
+      animation-iteration-count: infinite;
+    }
+    
+    @keyframes shake {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+      20% { transform: translate(-3px, 0px) rotate(1deg); }
+      30% { transform: translate(3px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+      60% { transform: translate(-3px, 1px) rotate(0deg); }
+      70% { transform: translate(3px, 1px) rotate(-1deg); }
+      80% { transform: translate(-1px, -1px) rotate(1deg); }
+      90% { transform: translate(1px, 2px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+    </style>
+
+    <style>
+      .oo{
+        -webkit-box-shadow: 0 30px 50px rgba(0,0,0,.2);
+        box-shadow: 0 30px 50px rgba(0,0,0,.2);
+      }
+      .ee{
+        color: white; text-shadow: black 0.1em 0.1em 0.2em
+      }
+      .gg{
+        text-shadow: 1px 1px white, -1px -1px #333
+        }
+      .card{
+        -webkit-box-shadow: 0 30px 50px rgba(0,0,0,.2);
+        box-shadow: 0 30px 50px rgba(0,0,0,.2);
+      }
+      .card-body1{
+        -webkit-box-shadow: 0 30px 50px rgba(0,0,0,.2);
+        box-shadow: 0 30px 50px rgba(0,0,0,.2);
+      }
+      .container#bb{
+        -webkit-box-shadow: 0 30px 50px rgba(0,0,0,.2);
+        box-shadow: 0 30px 50px rgba(0,0,0,.2);
+      }
+      .bb{
+        -webkit-box-shadow: 0 30px 50px rgba(0,0,0,.2);
+        box-shadow: 0 30px 50px rgba(0,0,0,.2);
+      }
+      section{
+        -webkit-box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
+        -moz-box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.52);
+      }
+      h2{
+        text-shadow: 0 0 0.2em #8F7
+        }
+      .abc{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .service-box{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+      }
+
+      #myBtn:hover {
+        background-color: #555;
+      }
+      .responsive {
+        width: 50%;
+        height: auto;
+      }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #9932CC;
+        color: white;
+        text-align: center;
+      }
+    </style>
+
+    <!--VDO-->
+    <style>
+      .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        padding-top: 25px;
+        height: 0;
+      }
+      .videoWrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+</head>
+
+<body  class="bg-light" text="000000" style="font-family: 'Comic Sans MS';">
+  <!--button top-->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <script>
+    var mybutton = document.getElementById("myBtn");
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+  <!--button top END-->
+
+  <!-- Navigation -->
+
+  <a class="menu-toggle rounded" href="#">
+    <i class="fa fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="smooth-scroll" href="#Header"></a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#page-top">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#About">About</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Services">What We Offer</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#vdo">Video</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Portfolio">Equipment</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#Code">Source Code</a>
+      </li>
+      
+      </li>
+    </ul>
+  </nav>
+  <!-- Header Starts -->
+  
+  <section id="Banner" class="content-section">
+    <div id="aa">
+      <div class="container content-wrap text-center">
+        <div class="oo">
+        <div class="ee"><h1 data-v-239ffe21 class="align-self-center style="font-family: 'Comic Sans MS';">Jumping  Ball <br>Project</h1></div>
+        <h3>
+          <em>A Bootstrap Theme to start building a new landing page</em>
+        </h3>
+        <div class="gg"><a class="btn btn-primary btn-xl smooth-scroll" href="#About">Find Out More</a></div>
+        </div>
+        <br>
+      </div>
+    <div class="overlay"></div>
+    </div>
+  </section>
+
+  <!-- Header Ends -->
+
+  <br>
+  <div class="row"></div>
+    <div class="col-md-12">
+      <marquee><h6><font color="grey">::: Welcome To Website Jumping Ball :::</font></h6></marquee>
+      <br><center><img src="https://upic.me/i/4b/645906hmoluktu9a.gif" ><img src="https://upic.me/i/4b/645906hmoluktu9a.gif"></center>
+    </div>
+  </div>
+  <!-- About Us Starts -->
+  <div class="ss">
+    <div class="container" id="bb">
+    <div class="container">
+    <div class="card">
+      <div class="card-body1">
+      <div class="card-body">
+        <div class="pp">
+        <section id="About" class="content-section">
+        
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="block-heading">
+                  <h2><i> Project</i></h2><br>
+                  <p >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp โครงงานนี้เราทำเกี่ยวกับ Microcontroller โดยจัดทำเป็นเกมส์ที่ใช้ไมโครคอนโทรลเลอร์ (Micro-controller)
+                  ในการทำ และใช้ตัว LED Dot Matrix เป็นตัวแสดงผลออกมาพัฒนามาจากเกมส์ Cookie Run และนำมาผสมผสานความคิดสร้างสรรค์ของผู้จัดทำ
+                  โดยตัวเกมส์จะแสดงผลออกมาเป็นไฟ LED ของ LED Dot Matrix มีปุ่มคอนโทรลให้เดินหน้า ถอยหลัง กระโดด จะมีสิ่งกีดขวางที่ผู้เล่นจะต้องหลบหลีก 
+                  ระหว่างทาง เพื่อให้ผู้เล่นจะได้ไม่เบื่อในการเล่นเกมส์ และเพื่อความสนุกสนานของผู้เล่นอีกด้วย</p><br>
+                  <center><img src="https://upic.me/i/2c/12561256883ait0xs1cuy.gif" class="responsive" ></center>
+                  
+                  <br>
+                  <hr class="my-4">
+                  <h2><i>Project Description</i></h2><br>
+                  <p >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp เกมส์ที่ใช้ไมโครคอนโทรลเลอร์ (Micro-controller)
+                  และใช้ตัว LED Dot Matrix เป็นตัวแสดงผลออกมา โดยเมื่อกดสวิตซ์แล้วลูกไฟจะกระโดดขึ้นสามช่อง  แต่ถ้าลูกไฟตกโดนสิ่งกีดขวาง
+                  ก็แพ้ </p><br>
+                  <center><img src="https://upic.me/i/8u/27_4200_2476.gif" class="responsive"></center>
+                  <hr class="my-4">
+                </div>
+              </div>
+            </div>
+          </div>
+        
+  </section>
+  <br>
+  <!-- About Us Starts -->
+  <section id="Services" class="content-section text-center">
+    
+      <div class="block-heading">
+        <h2>What We Offer</h2>
+        <br>
+        <center><img src="https://upic.me/i/uv/the-than139.gif" class="responsive" height="10"></center>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+
+          <div class="service-box">
+
+            <div class="service-icon yellow">
+              <div class="front-content">
+                <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/95967903_871239629954208_3327775742233673728_n.jpg?_nc_cat=101&_nc_sid=b96e70&_nc_eui2=AeGD3wWNDukjEODloxTe_Nt5sBMCr6fjWFWwEwKvp-NYVXe8Rl1A3_fylnAxrcJzpvNgArwPWqDRBcnHrwU9jiNa&_nc_ohc=kogxrQaGdTAAX9yeVFX&_nc_ht=scontent.fhdy2-1.fna&oh=7e632e96cf21afe090ed427dd6cb9787&oe=5ED6062E" width="240px" height="300px">
+                <h3>ก่อนกดสวิตซ์ลูกไฟจะไม่กระโดด</h3>
+              </div>
+            </div>
+
+            <div class="service-content">
+              <p><font size="4"><i>ก่อนกดสวิตซ์ลูกไฟจะไม่กระโดด</i></font></p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon orange">
+              <div class="front-content">
+                <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/95496273_684611952350200_7700345654094069760_n.jpg?_nc_cat=111&_nc_sid=b96e70&_nc_eui2=AeEUP4hMd-lXlEUsaRsRWUDIJNTxjkrjjlsk1PGOSuOOW_tWj5xfj9lv6yHGe1KTDVysGNM1ZfORnxnGErF34zSi&_nc_ohc=8-kk2lUrixoAX-HU5PU&_nc_ht=scontent.fhdy2-1.fna&oh=19a0abb3803d4546997ff953ccd8b863&oe=5ED93010" width="240px" height="300px">
+                <h3>กดสวิตซ์ลูกไฟกระโดด</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <p><font size="4"><i>กดสวิตซ์ลูกไฟกระโดด</i></font></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box ">
+            <div class="service-icon red">
+              <div class="front-content">
+                <i class="fa fa-male" aria-hidden="true"></i>
+                <h3>Solo Travel</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Solo Travel</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon grey">
+              <div class="front-content">
+                <i class="fa fa-users"></i>
+                <h3>Camping</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Camping</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <br>
+    
+  </section>
+
+<!--VDO-->
+
+  <!-- About Us Starts -->
+  <section id="vdo" class="content-section text-center">
+    
+    <div class="block-heading">
+        <h2>Video</h2>
+        
+    <br>
+    <center><img src="http://upic.me/i/d9/4gh11.gif" class="responsive"></center>
+    <br>
+      
+      <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <center>
+
+                  <div class="videoWrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yBIXeHHAhrI" frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                    
+                </center>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        
+
+    </div>
+    <br>
+    
+  </section>
+<!--VDO END-->
+
+  <br>
+<!---dddddddddปลอมddddddd-->
+<section class="content-section text-center" id="Portfolio">
+  <div class="container">
+    <div class="block-heading">
+      <h2>Equipment</h2><br>
+      <p>อุปกรณ์ที่ใช้พัฒนา Jumping Ball</p>
+    </div>
+    <center><div class="portfolio-wrapper clearfix">
+      <a class="each-portfolio" data-fancybox="gallery" href="https://ct.yimg.com/xd/api/res/1.2/w3Wu9voMSi9yWVONaR3URg--/YXBwaWQ9eXR3YXVjdGlvbnNlcnZpY2U7aD0zODY7cT04NTtyb3RhdGU9YXV0bzt3PTQxMA--/https://s.yimg.com/ob/image/e5b1f049-1469-43d6-99db-6f7771557d6a.jpg">
+        <div class="content hover-cont-wrap">
+          <div class="content-overlay"></div>
+          <img class="content-image" src="https://ct.yimg.com/xd/api/res/1.2/w3Wu9voMSi9yWVONaR3URg--/YXBwaWQ9eXR3YXVjdGlvbnNlcnZpY2U7aD0zODY7cT04NTtyb3RhdGU9YXV0bzt3PTQxMA--/https://s.yimg.com/ob/image/e5b1f049-1469-43d6-99db-6f7771557d6a.jpg">
+          <div class="content-details fadeIn-bottom">
+            <h5 class="p-title">Protoboard Breadboard 400 holes</h5>
+            <p class="p-desc">ใช้สำหรับทดลองวงจรเบื้องต้น  ขนาด 400 ช่องเสียบ ขนาดเล็กเหมาะสำหรับการทดลองวงจรที่ไม่ใหญ่มาก</p>
+            <span class="zoom"><i class="fa fa-search-plus"></i></span>
+          </div>
+        </div>
+      </a>
+      <a class="each-portfolio" data-fancybox="gallery" href="https://ae01.alicdn.com/kf/HTB1lOg7RFXXXXaSXXXXq6xXFXXXQ/ESP-12E-CP2102-NodeMcu-Lua-V2-Wireless-Module-Wifi-Internet-of-Things-IOT-Development-Board-Based.jpg">
+        <div class="content hover-cont-wrap">
+          <div class="content-overlay"></div>
+          <img class="content-image" src="https://ae01.alicdn.com/kf/HTB1lOg7RFXXXXaSXXXXq6xXFXXXQ/ESP-12E-CP2102-NodeMcu-Lua-V2-Wireless-Module-Wifi-Internet-of-Things-IOT-Development-Board-Based.jpg">
+          <div class="content-details fadeIn-bottom">
+            <h5 class="p-title">NodeMCU V2 LUA based ESP8266-12E</h5>
+            <p class="p-desc">CPU สำหรับประมวลผลโปรแกรมต่างๆ  หน่วยความจำรอมสูงถึง 4MB สำหรับการเขียนโปรแกรมขนาดใหญ่</p>
+            <span class="zoom"><i class="fa fa-search-plus"></i></span>
+          </div>
+        </div>
+      </a>
+      <a class="each-portfolio" data-fancybox="gallery" href="https://commandronestore.com/products/products_img/BB501.png">
+        <div class="content hover-cont-wrap">
+          <div class="content-overlay"></div>
+          <img class="content-image" src="https://commandronestore.com/products/products_img/BB501.png">
+          <div class="content-details fadeIn-bottom">
+            <h5 class="p-title">สายไฟจัมเปอร์ 20cm ผู้-เมีย</h5>
+            <p class="p-desc">ใช้ต่อวงจร กับ Protoboard Breadboard 400 holes และ LED Dot Matrix</p>
+            <span class="zoom"><i class="fa fa-search-plus"></i></span>
+          </div>
+        </div>
+      </a>
+      
+      <a class="each-portfolio" data-fancybox="gallery" href="https://cq.lnwfile.com/xnjd98.jpg">
+        <div class="content hover-cont-wrap">
+          <div class="content-overlay"></div>
+          <img class="content-image" src="https://cq.lnwfile.com/xnjd98.jpg">
+          <div class="content-details fadeIn-bottom">
+            <h5 class="p-title">LED Dot Matrix</h5>
+            <p class="p-desc">เป็นอุปกรณ์แสดงผล  คือ การนำ LED มาต่อกัน</p>
+            <span class="zoom"><i class="fa fa-search-plus"></i></span>
+          </div>
+        </div>
+      </a>
+      <a class="each-portfolio" data-fancybox="gallery" href="https://aumento.officemate.co.th/media/catalog/product/O/F/OFM4005963.jpg?imwidth=640">
+        <div class="content hover-cont-wrap">
+          <div class="content-overlay"></div>
+          <img class="content-image" src="https://aumento.officemate.co.th/media/catalog/product/O/F/OFM4005963.jpg?imwidth=640">
+          <div class="content-details fadeIn-bottom">
+            <h5 class="p-title">สาย USB</h5>
+            <p class="p-desc">เชื่อมต่อกับ Notebook , NodeMCU V2 LUA based ESP8266-12E</p>
+            <span class="zoom"><i class="fa fa-search-plus"></i></span>
+          </div>
+        </div>
+      </a>
+      <a class="each-portfolio" data-fancybox="gallery" href="https://www.asus.com/media/global/ProductLevel3/35305_n.jpg">
+        <div class="content hover-cont-wrap">
+          <div class="content-overlay"></div>
+          <img class="content-image" src="https://www.asus.com/media/global/ProductLevel3/35305_n.jpg">
+          <div class="content-details fadeIn-bottom">
+            <h5 class="p-title">Notebook</h5>
+            <p class="p-desc">ใช้ในการเขียน  code บนโปรแกรม Arduino 
+            </p>
+            <span class="zoom"><i class="fa fa-search-plus"></i></span>
+          </div>
+        </div>
+      </a>
+    </center></div><br>
+</section>   
+
+<br>
+<!--Source Code-->
+
+<section id="Code" class="content-section text-center">
+    
+  <div class="block-heading">
+      <h2>Source Code</h2>
+      
+  <br>
+  <center><img src="http://oknation.nationtv.tv/blog/home/blog_data/309/15309/images/line/line_03/24.gif" class="responsive"></center>
+    <br>
+    <div class="row">
+          <div class="col-md-12">
+              <center><div class="service-box" style="width: 900px; height: 1200px; overflow-y: scroll; scrollbar-arrow-color:blue; 
+              scrollbar-face-color: #e7e7e7; scrollbar-3dlight-color: #a0a0a0; scrollbar-darkshadow-color:#888888 " style="overflow-x:auto;">
+
+                <script src="https://gist.github.com/maurelle/875650e79af6c45df5a4ce41f61e821e.js" class="responsive"></script>
+                  
+              </div></center>
+          </div>
+          
+      </div>
+
+      
+
+  </div>
+  <br>
+  
+</section>
+<!--Source Code END-->
+
+
+
+<!--People-->
+<br>
+<section id="Services" class="content-section text-center">
+  <div class="block-heading">
+    <h2>Meet Our People</h2>
+    
+  </div>
+  <center><img src="http://oknation.nationtv.tv/blog/home/blog_data/309/15309/images/line/line_03/11.gif" class="responsive"></center>
+  <br>
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+
+      <div class="service-box">
+
+        <div class="service-icon yellow">
+          <div class="front-content">
+            <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/96239579_244451936869259_3139935923068731392_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_eui2=AeFiLV5SOdS280JKegCLrmi7nem1ZN-Gs2Kd6bVk34azYgC_7a4ahtpGJBc0UY18stfDfi_SKLo4d_U8-zNQwera&_nc_ohc=tFExqtkuEngAX-W5mjz&_nc_ht=scontent.fhdy2-1.fna&oh=aad3aa0450fc6fce1cad99c73d3fd2d4&oe=5ED89509" width="300px" height="300px">
+            <h3>นางสาวปิยาภรณ์ พูดเพราะ</h3>
+          </div>
+        </div>
+
+        <div class="service-content">
+          <p><font size="4"><i>62070124</i><br>นางสาวปิยาภรณ์ พูดเพราะ</font></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="service-box">
+        <div class="service-icon orange">
+          <div class="front-content">
+            <i class="fa fa-suitcase"></i>
+            <h3>นายนายศุภฤทธิ  วิชัยเฉลิมวงศ์</h3>
+          </div>
+        </div>
+        <div class="service-content">
+          <p><font size="4"><i>62070187</i><br>นายศุภฤทธิ<br>วิชัยเฉลิมวงศ์</font></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="service-box ">
+        <div class="service-icon red">
+          <div class="front-content">
+            <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/95554408_576991526281363_2883323743235473408_n.jpg?_nc_cat=108&_nc_sid=b96e70&_nc_eui2=AeFIJuQp1mUrGBUJXxcquO4c21kjbp5CxWzbWSNunkLFbDTm6L98kIr1DQAC1fHTmoaXsDV1UNvArExZUT4AIwdC&_nc_ohc=Cawc5vLkgtUAX8oj9az&_nc_ht=scontent.fhdy2-1.fna&oh=32b01d1f77d5a15423fcbcae1656244e&oe=5ED83F6D" width="230px" height="300px">
+            <h3>นางสาวสิปาง  กลิ่นหอม</h3>
+          </div>
+        </div>
+        <div class="service-content">
+          <p><font size="4"><i>62070196</i><br>นางสาวสิปาง<br>กลิ่นหอม</font></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="service-box">
+        <div class="service-icon grey">
+          <div class="front-content">
+            <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.0-9/19225342_1342361342526077_1792528041605645041_n.jpg?_nc_cat=103&_nc_sid=85a577&_nc_eui2=AeHUgqcVzR-LHBHV2QmXF4w77QXHOAYkYzbtBcc4BiRjNolPVMIDT_fTkmUkZa2GtCEpa23VjTU1xmbCyimLuFaD&_nc_ohc=6tJxEkJdbQ4AX-cSVfU&_nc_ht=scontent.fhdy2-1.fna&oh=2f8294743f8fd05fb7ebaf805afa69f7&oe=5ED6233E" width="230px" height="300px">
+            <h3>นายอุกฤษณ์ ศิลปชัยศรี</h3>
+          </div>
+        </div>
+        <div class="service-content">
+          <p><font size="4"><i>62070196</i><br>นายอุกฤษณ์<br>ศิลปชัยศรี</font></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<br>
+
+</section>
+
+
+
+
+<!--People END-->
+  
+  </div>
+  <!--ss-->
+</div>
+</div>
+
+<!--sss-->
+  
+</section>
+
+<!--ปลอมม-->
+
+
+<!--ss-->
+</div>
+<!--sss-->
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+  <!-- END OF TESTIMONIALS -->
+  <br>
+  <!---->
+  
+  <div class="footer">
+    <img src="http://upic.me/i/rd/kapook_43509.gif" class="responsive" width="10">
+  </div>
+</body>
+
+</html>
