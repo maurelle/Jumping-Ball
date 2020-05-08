@@ -139,16 +139,13 @@
         width: 100%;
         height: 100%;
       }
-      img.resize  {
-        width: 32px;
-        height: 32px;
-        border: 0;
-        }
-      img:hover.resize {
-        width: 128px;
-        height: 128px;
-        border: 0;
-        }
+    </style>
+    <style type="text/css" >
+      .page-content img {
+        max-width: 100%;
+        height: auto!important;
+        
+      }
     </style>
 </head>
 
@@ -200,12 +197,11 @@
         <a class="smooth-scroll" href="#Portfolio">Equipment</a>
       </li>
       <li class="sidebar-nav-item">
-        <a class="smooth-scroll" href="#poster">Poster</a>
-      </li>
-      <li class="sidebar-nav-item">
         <a class="smooth-scroll" href="#Code">Source Code</a>
       </li>
-      
+      <li class="sidebar-nav-item">
+        <a class="smooth-scroll" href="#poster">Poster</a>
+      </li>
       </li>
     </ul>
   </nav>
@@ -264,7 +260,9 @@
                   <h2><i>Project Description</i></h2><br>
                   <p >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp เกมส์ที่ใช้ไมโครคอนโทรลเลอร์ (Micro-controller)
                   และใช้ตัว LED Dot Matrix เป็นตัวแสดงผลออกมา โดยเมื่อกดสวิตซ์แล้วลูกไฟจะกระโดดขึ้นสามช่อง  แต่ถ้าลูกไฟตกโดนสิ่งกีดขวาง
-                  ก็แพ้ </p><br>
+                  ก็แพ้ library ที่เรานำมาใช้คือ LEDcontrol ที่จะรับรหัส hex (เลขฐาน 16) เข้าไปเป็นarray 8 หลักหรือ 8 แถว ยิ่งhex 
+                  มีค่ามากเท่าไร ไฟก็จะยิ่งอยู่ด้านซ้ายมากขึ้นเท่านั้น โดยเรียงจากขวาไปซ้ายเป็น 1,2,4,8,16 ถ้าเราแปลงเลขพวกนี้เป็นฐาน 16 เราจะได้
+                  ตำแหน่งของ LED จากขวา</p><br>
                   <center><img src="https://upic.me/i/8u/27_4200_2476.gif" class="responsive"></center>
                   <hr class="my-4">
                 </div>
@@ -290,13 +288,13 @@
 
             <div class="service-icon yellow">
               <div class="front-content">
-                <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/95967903_871239629954208_3327775742233673728_n.jpg?_nc_cat=101&_nc_sid=b96e70&_nc_eui2=AeGD3wWNDukjEODloxTe_Nt5sBMCr6fjWFWwEwKvp-NYVXe8Rl1A3_fylnAxrcJzpvNgArwPWqDRBcnHrwU9jiNa&_nc_ohc=kogxrQaGdTAAX9yeVFX&_nc_ht=scontent.fhdy2-1.fna&oh=7e632e96cf21afe090ed427dd6cb9787&oe=5ED6062E" width="240px" height="300px">
-                <h3>ก่อนกดสวิตซ์ลูกไฟจะไม่กระโดด</h3>
+                <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/96159621_571593723763323_634619376904962048_n.jpg?_nc_cat=107&_nc_sid=b96e70&_nc_eui2=AeGu7pE_LKur8S_y0lgIWZMu4HjKvyXXv3LgeMq_Jde_cnF8SR2w0F73HXlKY79A4lvo7wv83TTa17UlewQ2CKEu&_nc_ohc=I8HnN2GJIEIAX8OIMPI&_nc_ht=scontent.fhdy2-1.fna&oh=2f9a9653dcef05a80b886d0f9d663226&oe=5EDC2E23" width="220px" height="300px">
+                <h3>นับถอยหลังก่อนเริ่มใช้งาน</h3>
               </div>
             </div>
 
             <div class="service-content">
-              <p><font size="4"><i>ก่อนกดสวิตซ์ลูกไฟจะไม่กระโดด</i></font></p>
+              <p><font size="4"><i>นับถอยหลังก่อนเริ่มใช้งาน</i></font></p>
             </div>
 
           </div>
@@ -306,12 +304,12 @@
           <div class="service-box">
             <div class="service-icon orange">
               <div class="front-content">
-                <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/95496273_684611952350200_7700345654094069760_n.jpg?_nc_cat=111&_nc_sid=b96e70&_nc_eui2=AeEUP4hMd-lXlEUsaRsRWUDIJNTxjkrjjlsk1PGOSuOOW_tWj5xfj9lv6yHGe1KTDVysGNM1ZfORnxnGErF34zSi&_nc_ohc=8-kk2lUrixoAX-HU5PU&_nc_ht=scontent.fhdy2-1.fna&oh=19a0abb3803d4546997ff953ccd8b863&oe=5ED93010" width="240px" height="300px">
-                <h3>กดสวิตซ์ลูกไฟกระโดด</h3>
+                <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/95745951_542109260002776_5072926585024151552_n.jpg?_nc_cat=106&_nc_sid=b96e70&_nc_eui2=AeFbxyRrrXz1od0w6X2u58HwIR0Rg2Jun30hHRGDYm6ffTXXcHUDQGO59kHKqlgdn1TCr6vQLGroJkSW83FOH7Cq&_nc_ohc=8fsnmgLT2PAAX9pz_41&_nc_ht=scontent.fhdy2-1.fna&oh=d5ec8cf2a1f31c9e58407533cc553773&oe=5EDAC53F" width="240px" height="300px">
+                <h3>LED Dot Matrix แสดงลูกไฟ กับ สิ่งกีดขวาง</h3>
               </div>
             </div>
             <div class="service-content">
-              <p><font size="4"><i>กดสวิตซ์ลูกไฟกระโดด</i></font></p>
+              <p><font size="4"><i>LED Dot Matrix แสดงลูกไฟ กับ สิ่งกีดขวาง</i></font></p>
             </div>
           </div>
         </div>
@@ -320,13 +318,12 @@
           <div class="service-box ">
             <div class="service-icon red">
               <div class="front-content">
-                <i class="fa fa-male" aria-hidden="true"></i>
-                <h3>Solo Travel</h3>
+                <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/96348542_1045278062522166_3100623743811059712_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_eui2=AeG9-CZLK4uf2u4VWa5DUtD1iuPdv3qWCI6K492_epYIjpT_jCwra__p2OQA4vaf3EcGpi289GJQye3fDw_XzuDy&_nc_ohc=7fHZdIXRhM8AX9ZOwFx&_nc_ht=scontent.fhdy2-1.fna&oh=2fad7ca6b9fe7b32259385322bfebd09&oe=5EDBD199" width="240px" height="300px">
+                <h3>กดสวิตซ์ลูกไฟจะกระโดด</h3>
               </div>
             </div>
             <div class="service-content">
-              <h3>Solo Travel</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+              <p><font size="4"><i>กดสวิตซ์ลูกไฟจะกระโดด</i></font></p>
             </div>
           </div>
         </div>
@@ -335,13 +332,12 @@
           <div class="service-box">
             <div class="service-icon grey">
               <div class="front-content">
-                <i class="fa fa-users"></i>
-                <h3>Camping</h3>
+                <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/95607173_244788523430528_8411115698805276672_n.jpg?_nc_cat=101&_nc_sid=b96e70&_nc_eui2=AeHPjesfnqSsvGFLwopZpmFNCwKueORtJ7cLAq545G0nt2qZqtf40Fbb4sJfFdOm2EJWTD0Zj1YOH6Zrv0Jpla3H&_nc_ohc=7HElYCrn3xAAX_Obkzx&_nc_ht=scontent.fhdy2-1.fna&oh=fb77a69fae11b5494e14d5e3e25d7d46&oe=5EDB06F5" width="240px" height="300px">
+                <h3>กดสวิตซ์ลูกไฟกระโดด</h3>
               </div>
             </div>
             <div class="service-content">
-              <h3>Camping</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+              <p><font size="4"><i>ลูกไฟกระโดดข้ามสิ่งกีดขวาง</i></font></p>
             </div>
           </div>
         </div>
@@ -371,7 +367,7 @@
                 <center>
 
                   <div class="videoWrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yBIXeHHAhrI" frameborder="0" 
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/B2lfrDLV2Ms" frameborder="0" 
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   </div>
                     
@@ -514,24 +510,26 @@
       <div class="row">
             
                 <center>
+                  <div class="page-content">
+              
+                        <center><img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/p1080x2048/95590293_165881848156742_7776088781043531776_n.png?_nc_cat=106&_nc_sid=b96e70&_nc_eui2=AeEvFRrgr11Cq4nU4h-a83KRCoFqXmU5NtoKgWpeZTk22idHryi_hHQil034d-AfuYj-P--gvh1o3k-6feIkhmiV&_nc_ohc=M5kcnO1ghbwAX_RMIq-&_nc_ht=scontent.fhdy2-1.fna&oh=cb64456f40e2587e466cc9ff48792e11&oe=5EDA156A"  
+                          width="800" class="responsive" ></center>
 
-                  <img src="https://scontent.fhdy2-1.fna.fbcdn.net/v/t1.15752-9/p1080x2048/95590293_165881848156742_7776088781043531776_n.png?_nc_cat=106&_nc_sid=b96e70&_nc_eui2=AeEvFRrgr11Cq4nU4h-a83KRCoFqXmU5NtoKgWpeZTk22idHryi_hHQil034d-AfuYj-P--gvh1o3k-6feIkhmiV&_nc_ohc=M5kcnO1ghbwAX_RMIq-&_nc_ht=scontent.fhdy2-1.fna&oh=cb64456f40e2587e466cc9ff48792e11&oe=5EDA156A"  class="responsive"  width="800" alt="animate" class="resize"></div>
-                   
-                    
+                  </div>
                 </center>
-            
+             
         </div>
 
         
 
     </div>
-
+    <br>
     
   </section>
 <!--Poster END-->
 
 <!--People-->
-
+<br>
 <section id="Services" class="content-section text-center">
   <div class="block-heading">
     <h2>Meet Our People</h2>
@@ -645,4 +643,3 @@
 </body>
 
 </html>
-
